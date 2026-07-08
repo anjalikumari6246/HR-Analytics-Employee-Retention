@@ -68,11 +68,11 @@ HR-Analytics-Employee-Retention/
 ├── notebook/
 │   └── employee_attrition_analysis.ipynb
 │
-├── dashboard/
-│   └── hr_analytics-dashboard.pbix
+├── powerbi/
+│   └── hr_analytics_dashboard.pbix
 │
 ├── sql/
-│   └── hr_analytics_queries.sql
+│   └── employee_attrition_queries.sql
 │
 └── README.md
 ```
