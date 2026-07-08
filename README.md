@@ -61,18 +61,18 @@ HR-Analytics-Employee-Retention/
 │   └── HR-Employee-Attrition.csv
 │   └── processed_hr_data.csv
 │
+├── images/
+│   ├── HR_dashboard1.png
+│   └── HR_dashboard2.png
+│
 ├── notebook/
 │   └── employee_attrition_analysis.ipynb
-│
-├── sql/
-│   └── employee_attrition_queries.sql
 │
 ├── dashboard/
 │   └── hr_analytics-dashboard.pbix
 │
-├── images/
-│   ├── HR_dashboard1.png
-│   └── HR_dashboard2.png
+├── sql/
+│   └── hr_analytics_queries.sql
 │
 └── README.md
 ```
@@ -138,6 +138,7 @@ Performed SQL analysis to answer business questions such as:
 ### HR Analytics Dashboard
 
 ![Dashboard](images/HR_dashboard1.png)
+
 ![Dashboard](images/HR_dashboard2.png)
 
 ---
