@@ -1,106 +1,162 @@
 # HR Analytics & Employee Retention Dashboard
 
-## Overview
-
-This project analyzes employee data to identify factors influencing attrition and workforce trends. Using Python, PostgreSQL, SQL, and Power BI, the project performs data cleaning, exploratory data analysis, SQL-based business analysis, and interactive dashboard creation to support HR decision-making.
+An end-to-end HR Analytics project that leverages **Python, PostgreSQL, SQL, and Power BI** to analyze employee attrition, workforce demographics, and organizational performance. The project focuses on uncovering key factors influencing employee retention and presenting actionable business insights through interactive dashboards.
 
 ---
 
-## Problem Statement
+## 📌 Project Overview
 
-Employee attrition impacts productivity and organizational growth. This project aims to analyze workforce data, identify key drivers of employee attrition, and provide actionable insights through data visualization and SQL analysis.
+Employee attrition is one of the major challenges faced by organizations. This project analyzes HR data to identify workforce trends, understand the factors contributing to employee attrition, and support data-driven HR decision-making.
 
----
+The project covers the complete analytics workflow including:
 
-## Dataset
-
-* **Records:** 1,470 employees
-* Includes employee demographics, job roles, education, income, performance, work-life balance, job satisfaction, overtime, and attrition status.
-
----
-
-## Technologies Used
-
-* Python
-* Pandas
-* PostgreSQL
-* SQL
-* Power BI
+- Data Cleaning & Preprocessing
+- Exploratory Data Analysis (EDA)
+- SQL-based Business Analysis
+- Interactive Dashboard Development
+- HR KPI Reporting
 
 ---
 
-## Project Workflow
+## 📊 Dataset
 
-* Imported and cleaned HR employee data using Python.
-* Loaded the processed dataset into PostgreSQL.
-* Performed SQL analysis to answer business questions related to employee attrition and workforce trends.
-* Built an interactive Power BI dashboard to visualize HR KPIs and employee insights.
+- **Total Employees:** 1,470
+- **Processed Dataset:** Included in this repository
+- **Domain:** Human Resources
 
----
+The dataset contains employee information including:
 
-## Dashboard Highlights
-
-* Employee Attrition Rate
-* Department-wise Attrition
-* Attrition by Age Group
-* Attrition by Job Role
-* Attrition by Education Field
-* Monthly Income Analysis
-* Years at Company Analysis
-* Gender Distribution
-* Overtime vs Attrition
-* Job Satisfaction Analysis
-* Performance Rating Distribution
-* Workforce Demographics
-
-**Dashboard Features**
-
-* 15+ interactive visuals
-* KPI Cards
-* Dynamic filters and slicers
+- Demographics
+- Department
+- Job Role
+- Education
+- Monthly Income
+- Attrition
+- Job Satisfaction
+- Work-Life Balance
+- Overtime
+- Performance Rating
+- Years at Company
+- Business Travel
+- and more.
 
 ---
 
-## Key Insights
+## 🛠️ Tech Stack
 
-* Identified departments and job roles with higher employee attrition.
-* Analyzed the impact of overtime, job satisfaction, and work-life balance on employee retention.
-* Explored salary, age, education, and experience trends across the workforce.
-* Provided interactive dashboards for HR monitoring and decision-making.
+- Python
+- Pandas
+- PostgreSQL
+- SQL
+- Power BI
 
 ---
 
-## Repository Structure
+## 📂 Repository Structure
 
 ```text
 HR-Analytics-Employee-Retention/
 │
-├── HR_Analytics.ipynb
-├── sql_queries.sql
-├── HR_Analytics.pbix
-├── dashboard.png
-├── hr_data.csv
-├── requirements.txt
+├── data/
+│   └── HR-Employee-Attrition.csv
+│   └── processed_hr_data.csv
+│
+├── notebook/
+│   └── employee_attrition_analysis.ipynb
+│
+├── sql/
+│   └── employee_attrition_queries.sql
+│
+├── dashboard/
+│   └── hr_analytics-dashboard.pbix
+│
+├── images/
+│   ├── HR_dashboard1.png
+│   └── HR_dashboard2.png
+│
 └── README.md
 ```
 
 ---
 
-## Future Improvements
+## 🔄 Project Workflow
 
-* Predict employee attrition using Machine Learning.
-* Deploy the dashboard on Power BI Service.
-* Automate ETL using scheduled data refresh.
-* Integrate additional HR performance metrics.
+1. Cleaned and preprocessed HR data using Python.
+2. Performed exploratory data analysis to identify workforce trends.
+3. Imported the processed dataset into PostgreSQL.
+4. Wrote SQL queries to answer HR business questions.
+5. Created an interactive Power BI dashboard to visualize employee insights.
 
 ---
 
-## Author
+## 📈 Dashboard Features
+
+The dashboard includes:
+
+- Employee Count
+- Attrition Rate
+- Average Age
+- Average Salary
+- Attrition by Department
+- Attrition by Job Role
+- Attrition by Education Field
+- Attrition by Age Group
+- Monthly Income Analysis
+- Job Satisfaction Analysis
+- Overtime Analysis
+- Years at Company
+- Gender Distribution
+- Interactive Filters & Slicers
+
+---
+
+## 🔍 SQL Analysis
+
+Performed SQL analysis to answer business questions such as:
+
+- Which departments have the highest attrition?
+- Which job roles experience maximum employee turnover?
+- How does overtime impact attrition?
+- What is the average monthly income across departments?
+- Which education fields have the highest attrition?
+- How does job satisfaction relate to employee retention?
+
+---
+
+## 📊 Key Insights
+
+- Identified departments and job roles with higher employee attrition.
+- Found strong relationships between overtime and employee turnover.
+- Analyzed employee demographics influencing retention.
+- Compared salary, education, and experience across departments.
+- Built an interactive dashboard for HR decision support.
+
+---
+
+## 📷 Dashboard Preview
+
+### HR Analytics Dashboard
+
+![Dashboard](images/HR_dashboard1.png)
+![Dashboard](images/HR_dashboard2.png)
+
+---
+
+## 🚀 Future Improvements
+
+- Employee Attrition Prediction using Machine Learning
+- Dashboard Deployment using Power BI Service
+- Automated ETL Pipeline
+- Real-time HR Analytics Dashboard
+
+---
+
+## 👩‍💻 Author
 
 **Anjali Kumari**
 
-Bachelor of Technology, IIT Kanpur
+B.Tech, Mechanical Engineering  
+Indian Institute of Technology Kanpur
 
-LinkedIn: https://www.linkedin.com/in/anjali-kumari-b5581823a
-
-GitHub: https://github.com/anjalikumari6246
+- LinkedIn: www.linkedin.com/in/anjali-kumari-b5581823a
+- GitHub: github.com/anjalikumari6246
