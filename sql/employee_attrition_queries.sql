@@ -4,13 +4,12 @@ SELECT COUNT(*) AS total_employee
 FROM hr_data;
 
 --2. total employee who left
-SELECT COUNT(*) AS total_employee FROM hr_data
-WHERE attrition = 'Yes'
+SELECT COUNT(*) AS employees_left FROM hr_data WHERE attrition = 'Yes';
 
 --3. Attrition Rate(%)
 SELECT 
 ROUND(
-100*SUM(CASE WHEN attrition = 'Yes' THEN 1 ELSE 0 END)/COUNT(*),2
+100.0 * SUM(CASE WHEN attrition = 'Yes' THEN 1 ELSE 0 END)/COUNT(*),2
 ) AS attrition_rate 
 FROM hr_data
 
@@ -48,12 +47,12 @@ SELECT overtime, attrition, COUNT(*) AS employee FROM hr_data
 GROUP BY overtime, attrition
 ORDER BY overtime
 
---10. attrition by age group (export)
+--10. attrition rate by age group (export)
 SELECT age_group,
-COUNT(*) FILTER (WHERE attrition='Yes') AS attrition_count,
-COUNT(*) AS total_employees,
+COUNT(*) FILTER (WHERE attrition='Yes') AS leavers,
+COUNT(*) AS employees,
 ROUND(
-100*COUNT(*) FILTER (WHERE attrition ='Yes')/COUNT(*),2
+100.0 * COUNT(*) FILTER (WHERE attrition ='Yes')/COUNT(*),1
 ) AS attrition_rate FROM hr_data
 GROUP BY age_group
 ORDER BY attrition_rate DESC
@@ -70,14 +69,11 @@ FROM hr_data
 GROUP BY education_level
 ORDER BY avg_salary DESC
 
---13. Rank departments by attrition (WINDOW FN)
+--13. Rank departments by attrition rate (WINDOW FN)
 SELECT department,
-COUNT(*) FILTER (WHERE attrition ='Yes') AS attrition_count,
-RANK() OVER(
-ORDER BY COUNT(*) FILTER (WHERE attrition ='Yes') DESC
-) AS department_rank
-FROM hr_data
-GROUP BY department
+       ROUND(100.0 * AVG(CASE WHEN attrition = 'Yes' THEN 1 ELSE 0 END), 1) AS attrition_rate,
+       RANK() OVER (ORDER BY AVG(CASE WHEN attrition = 'Yes' THEN 1 ELSE 0 END) DESC) AS department_rank
+FROM hr_data GROUP BY department;
 
 --14. Employee earning above Department Avg (CTE)
 WITH dept_avg AS(
@@ -104,3 +100,16 @@ FROM hr_data
 )
 SELECT * FROM ranked_salary 
 WHERE salary_rank <= 5
+
+-- NEW. Attrition RATE by any driver (swap the column name): department, overtime, jobrole,
+-- income_group, maritalstatus, businesstravel, joblevel, stockoptionlevel, experience_group ...
+SELECT overtime,
+       COUNT(*) AS employees,
+       ROUND(100.0 * AVG(CASE WHEN attrition = 'Yes' THEN 1 ELSE 0 END), 1) AS attrition_rate
+FROM hr_data GROUP BY overtime ORDER BY attrition_rate DESC;      
+ 
+-- NEW. Does the overtime effect hold inside every department? (checks for confounding)
+SELECT department, overtime,
+       ROUND(100.0 * AVG(CASE WHEN attrition = 'Yes' THEN 1 ELSE 0 END), 1) AS attrition_rate
+FROM hr_data GROUP BY department, overtime ORDER BY department, overtime;
+ 
