@@ -76,38 +76,4 @@ Strongest model factors (odds ratios): Laboratory Technician role 2.25 (vs Healt
 4. Run the SQL queries in pgAdmin or any SQL client.
 5. Open `hr_analytics_dashboard.pbix` in Power BI Desktop.
 
-## Repository contents
-```
-HR-Analytics-Employee-Retention/
-│
-├── data/
-│   └── HR-Employee-Attrition.csv
-│   └── processed_hr_data.csv
-│
-├── images/
-│   ├── db1.png
-│   └── db2.png
-│
-├── notebook/
-│   └── employee_attrition_analysis.ipynb
-│
-├── powerbi/
-│   └── hr_analytics_dashboard.pbix
-│
-├── sql/
-│   └── employee_attrition_queries.sql
-│
-└── README.md
-```
-
-## Future improvements
-- Compare with a decision tree or random forest.
-- Add cross-validation for steadier model metrics.
-- Automate cleaning and profiling with a reusable Python script.
-- Add a natural-language question-to-SQL assistant.
-
-## Author
-**Anjali Kumari** · [www.linkedin.com/in/anjali-kumari-b5581823a] · [kumarianjali6246@gmail.com]
-
----
 
